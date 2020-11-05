@@ -1,0 +1,38 @@
+<h2>Выбрать пиццу</h2>
+</br>
+
+<style>
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+<div class="box">
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col">
+      <%=product.name %>
+    </div>
+    <div class="col">
+      <%=product.description %>
+    </div>
+    <div class="col">
+      <%=product.size %>
+    </div>
+      <div class="col">
+        <%=product.is_spicy %>
+      </div>
+      <div class="col">
+        <%=product.is_veg %>
+      </div>
+      <div class="col">
+        <%=product.is_best_offer %>
+      </div>
+      <div class="col">
+        <img src="<%=product.path_to_image %>" alt="Фото пиццы <%=product.name %>" width="200">
+      </div>
+    <% end %>
+  </div>
+</div>
+

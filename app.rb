@@ -7,7 +7,7 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:pizzashop.db"
 
 class Product < ActiveRecord::Base
-	
+
 end
 
 get '/' do
@@ -16,4 +16,9 @@ end
 
 get '/about' do
 	erb :about
+end
+
+get '/products' do
+  @products = Product.all
+	erb :products
 end
