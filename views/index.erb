@@ -1,2 +1,29 @@
 <h2>Welcome to PizzaShop!</h2>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4">
+      <div>
+        <h4><%=product.name %></h4>
+      </div>
+      <div>
+        <img src="<%=product.path_to_image %>" alt="Фото пиццы <%=product.name %>" width="200">
+      </div>
+      <div>
+        <br><%=product.description %>
+      </div>
+      <div>
+        Цена: <%=product.price %> руб.
+      </div>
+      <div>
+        Размер: <%=product.size %> см
+      </div>
+      <div>
+        <br><button type="button" class="btn btn-sm btn-success">Купить</button>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</br></br>
 <button class="btn btn-primary btn-lg" onclick="something()">Click Me!</button>
