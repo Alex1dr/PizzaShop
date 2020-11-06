@@ -8,3 +8,7 @@ function something()
     alert(x);
 
 }
+
+function add_to_card(id) {
+    alert('Yoy added pizza of id:' + id );
+}
