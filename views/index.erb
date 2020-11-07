@@ -19,7 +19,7 @@
         Размер: <%=product.size %> см
       </div>
       <div>
-        <br><button type="button" class="btn btn-sm btn-success" onclick="add_to_card(<%= product.id %>)">Купить</button>
+        <br><button type="button" class="btn btn-sm btn-success" onclick="add_to_cart(<%= product.id %>)">Купить</button>
       </div>
     </div>
   <% end %>
@@ -27,3 +27,8 @@
 
 </br></br>
 <button class="btn btn-primary btn-lg" onclick="something()">Click Me!</button>
+
+</br></br>
+<button class="btn btn-primary btn-lg" onclick="get_number_products()">Click Me!</button>
+
+
