@@ -10,6 +10,11 @@ class Product < ActiveRecord::Base
 
 end
 
+get '/cart' do
+	@orders = parse_orders_input params[:orders]
+	erb :cart
+end
+
 get '/' do
 	@products = Product.all
 	erb :index
@@ -19,11 +24,25 @@ get '/about' do
 	erb :about
 end
 
-get '/products' do
-  @products = Product.all
-	erb :products
+post '/cart' do
+  @orders = parse_orders_input params[:orders]
+  erb :cart
 end
 
-post '/cart' do
-  erb 'Helllo!'
+def parse_orders_input orders_input
+	s1=orders_input.split(',')
+	arr = []
+
+	s1.each do |x|
+		s2 = x.split('=')
+		s3 = s2[0].split('_')
+		puts s3[1] + "," + s2[1]
+
+		arr2 = [s3[1], s2[1]]
+		arr.push arr2
+
+	end
+
+	return arr
+
 end

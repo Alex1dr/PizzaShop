@@ -34,13 +34,13 @@
 			  <div class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav">
 			      <li><a href="/about">About</a></li>
-			      <li><a href="/products">Выбрать пиццу</a></li>
+			      <li><a href="/cart">Cart</a></li>
 			      <li><a href="/contacts">Contacts</a></li>
 			    </ul>
 					<ul class="nav navbar-nav navbar-right">
 						<form action="/cart" method="post">
 							<input id="orders_input" name="orders" type="hidden">
-						<li><input type="submit" class="btn btn-primary btn-lg" value="Cart (...)"></li>
+						<li><input id="orders_button" type="submit" class="btn btn-primary btn-lg" value="Cart (...)"></li>
 						</form>
 					</ul>
 			  </div><!--/.nav-collapse -->
@@ -54,6 +54,11 @@
 			</div>
 
 	</div>
-
+		<script type="text/javascript">
+			$(function() {
+				update_orders_input();
+				update_orders_button();
+			});
+		</script>
   </body>
 </html>
