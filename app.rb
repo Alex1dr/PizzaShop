@@ -10,9 +10,15 @@ class Product < ActiveRecord::Base
 
 end
 
+class Order < ActiveRecord::Base
+
+end
+
 before do
 	@products = Product.all
 end
+
+
 
 get '/cart' do
 
